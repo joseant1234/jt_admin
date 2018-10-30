@@ -1,4 +1,4 @@
-require 'devise'
+
 # frozen_string_literal: true
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
@@ -9,7 +9,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '852e92cbe29d035ef2a3b55374d8042d1eac737ce751b46d27fca7d160568f8787e5c12d098c9f6d4884eac048aac9c638d877d05b34e7328a117f18c60c0f33'
+  config.secret_key = '852e92cbe29d035ef2a3b55374d8042d1eac737ce751b46d27fca7d160568f8787e5c12d098c9f6d4884eac048aac9c638d877d05b34e7328a117f18c60c0f33'
+  config.parent_controller = 'JtAdmin::ApplicationController'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -276,7 +277,7 @@ Devise.setup do |config|
   #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:
-  # config.router_name = :my_engine
+  config.router_name = :jt_admin
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
