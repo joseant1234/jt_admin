@@ -5,31 +5,32 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title Admin
     = csrf_meta_tags
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'jt_admin/application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'jt_admin/application', 'data-turbolinks-track': 'reload'
 
   %body
     #notice{style: 'display: none'}= flash[:notice]
 
-    - if admin_signed_in?
-      .navbar-fixed
-        %nav.white
-          .nav-wrapper
-            = link_to 'Admin', jt_admin.root_path, class: 'black-text text-logo'
-            %ul.right.hide-on-med-and-down
-              %li
-                = link_to jt_admin.destroy_admin_session_path, method: :delete, class: 'black-text' do
-                  Logout
-                  %i.material-icons.right input
 
-      .row.no-margin.full-height
-        .col.s3.m2.no-padding.full-height.custom-color
-          .collection.no-margin.custom-color#options
+    .navbar-fixed
+      %nav.white
+        .nav-wrapper
+          = link_to 'Admin', jt_admin.root_path, class: 'black-text text-logo'
+          %ul.right.hide-on-med-and-down
+            %li
+              = link_to '', method: :delete, class: 'black-text' do
+                Logout
+                %i.material-icons.right input
 
-            = li_paint_slider 'ROOT', jt_admin.root_path, ['admin']
+    .row.no-margin.full-height
+      .col.s3.m2.no-padding.full-height.custom-color
+        .collection.no-margin.custom-color#options
 
-        .col.s9.m10.no-padding.full-height#main
-          = yield
-          %div{style: "height: 4.5em"}
-    - else
-      = yield
+          = li_paint_slider 'ROOT', jt_admin.root_path, ['admin']
+
+      .col.s9.m10.no-padding.full-height#main
+        = yield
+        %div{style: "height: 4.5em"}
+
