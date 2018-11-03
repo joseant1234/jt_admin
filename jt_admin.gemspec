@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency "haml-rails", "~> 1.0"
   s.add_dependency "materialize-sass", "~> 0.100.2"
   s.add_dependency 'sass-rails', '~> 5.0'
+  s.add_dependency 'uglifier','>= 1.3.0'
+  s.add_dependency 'turbolinks', '~> 5'
 
   s.add_development_dependency "sqlite3"
 end
