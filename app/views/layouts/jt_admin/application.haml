@@ -15,9 +15,9 @@
 
 
     .navbar-fixed
-      %nav.white
+      %nav.jt-secondary-color
         .nav-wrapper
-          = link_to 'Admin', jt_admin.root_path, class: 'black-text text-logo'
+          = link_to 'JT_ADMIN', jt_admin.root_path, class: 'black-text text-logo'
           %ul.right.hide-on-med-and-down
             %li
               = link_to '', method: :delete, class: 'black-text' do
@@ -25,10 +25,12 @@
                 %i.material-icons.right input
 
     .row.no-margin.full-height
-      .col.s3.m2.no-padding.full-height.custom-color
-        .collection.no-margin.custom-color#options
+      .col.s3.m2.no-padding.full-height.jt-main-color
+        .collection.no-margin.jt-main-color#options
 
-          = li_paint_slider 'ROOT', jt_admin.root_path, ['admin']
+          = li_paint_slider 'ROOT', jt_admin.root_path, ['welcome']
+          = li_paint_slider 'ROOT', jt_admin.root_path, ['other_controller']
+          = li_paint_slider 'ROOT', jt_admin.root_path, ['other_controller']
 
       .col.s9.m10.no-padding.full-height#main
         = yield

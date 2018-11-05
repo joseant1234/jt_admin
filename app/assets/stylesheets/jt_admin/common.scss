@@ -1,5 +1,14 @@
-@import "materialize";
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import 'materialize';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import './variables';
+
+html, body {
+  margin: 0px;
+  min-width: 100vw;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
 
 /* WIDTH AND HEIGHT*/
 .full-width {
@@ -8,4 +17,58 @@
 .full-height {
   height: 100%;
 }
+/* MARGIN */
+.no-margin {
+  margin: 0px;
+}
 
+/* PADDING */
+.no-padding {
+  padding: 0px;
+}
+
+/* COLORS */
+.jt-main-color{
+  background-color: $main-color !important;
+}
+.jt-main-color-text{
+  color: $main-color !important;
+}
+
+.jt-secondary-color{
+  background-color: $secondary-color !important;
+}
+.jt-secondary-color-text{
+  color: $secondary-color !important;
+}
+
+.text-logo{
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#main {
+  overflow-y: auto;
+}
+
+#options .collection-item.option-item:hover{
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  background-color: white;
+
+  @extend .jt-main-color-text
+}
+
+.collection-item.option-item{
+  background-color: transparent;
+  border: 0px;
+  padding: 1em;
+}
+
+.collection#options{
+  border: 0px;
+  border-radius: 0px;
+}
